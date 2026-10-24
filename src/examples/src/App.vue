@@ -1,63 +1,33 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-// Импорт конкретных компонентов — для точечного тестирования
-// (глобальная регистрация через app.use тоже работает — см. <VfButton/>)
-import { Button, TextInput } from '@lib/index'
-import '@lib/styles/index.scss'
+import { computed, ref } from 'vue'
+import { pages, type PageKey } from './pages/registry'
+import './pages/_shared.css'
 
-const count = ref(0)
-const text = ref('')
-const loading = ref(false)
-
-function simulateLoading() {
-  loading.value = true
-  setTimeout(() => (loading.value = false), 1500)
-}
+const current = ref<PageKey>('buttons')
+const currentComponent = computed(() => pages[current.value].component)
 </script>
 
 <template>
   <div class="playground">
     <header>
       <h1>🧪 VueForge Playground</h1>
-      <p>Здесь тестируются компоненты библиотеки в реальном времени.</p>
     </header>
 
+    <nav class="tabs">
+      <button
+        v-for="(page, key) in pages"
+        :key="key"
+        :class="{ active: current === key }"
+        @click="current = key"
+      >
+        {{ page.label }}
+      </button>
+    </nav>
+
     <main>
-      <!-- 1. Счётчик — проверка реактивности -->
-      <section class="demo-block">
-        <h2>Счётчик</h2>
-        <button @click="count++">Кликов: {{ count }}</button>
-      </section>
-
-      <!-- 2. Button — named import -->
-      <section class="demo-block">
-        <h2>Button (named import)</h2>
-        <div class="row">
-          <Button>Default</Button>
-          <Button type="submit">Submit</Button>
-          <Button @click="simulateLoading">
-            {{ loading ? 'Loading…' : 'Click me' }}
-          </Button>
-        </div>
-      </section>
-
-      <!-- 3. Button — глобальная регистрация через app.use(VueForge) -->
-      <section class="demo-block">
-        <h2>Button (global via app.use)</h2>
-        <div class="row">
-          <VfButton>Global Button</VfButton>
-        </div>
-        <p class="hint">
-          Если этот блок рендерится — плагин регистрирует компоненты корректно.
-        </p>
-      </section>
-
-      <!-- 4. TextInput с v-model -->
-      <section class="demo-block">
-        <h2>TextInput (v-model)</h2>
-        <TextInput v-model="text" placeholder="Введите текст…" />
-        <p class="hint">modelValue: <code>{{ text || '—' }}</code></p>
-      </section>
+      <KeepAlive>
+        <component :is="currentComponent" />
+      </KeepAlive>
     </main>
   </div>
 </template>
