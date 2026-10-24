@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       // Импорт библиотеки как @lib/...
       '@lib': resolve(__dirname, '../packages'),
+      '@': resolve(__dirname, '../packages'),
     },
   },
   server: {

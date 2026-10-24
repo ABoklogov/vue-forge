@@ -1,28 +1,16 @@
 import type { App, Plugin } from 'vue'
+import { Button, TextInput } from './components'
 
-// Импорт компонентов (пока заглушки — замените на свои)
-// import Button from './components/Button'
-// import Input from './components/Input'
-
-// Импорт композаблов
-// import { useTheme } from './composables/useTheme'
-
-// Именованный экспорт (для tree-shaking)
-// export { Button, Input, useTheme }
-
-// Экспорт типов
+export { Button, TextInput }
 // export * from './types'
+// export * from './composables'
+// export * from './utils'
 
-// Пример-заглушка, чтобы файл был валидным
 export const version = '0.1.0'
 
-// Плагин для app.use(MyVueLib)
-const components: any[] = [
-  // Button,
-  // Input,
-]
+const components = [Button, TextInput]
 
-const MyVueLib: Plugin = {
+const VueForge: Plugin = {
   install(app: App) {
     components.forEach((component) => {
       if (component.name) {
@@ -32,4 +20,4 @@ const MyVueLib: Plugin = {
   },
 }
 
-export default MyVueLib
+export default VueForge
