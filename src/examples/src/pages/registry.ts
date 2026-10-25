@@ -2,6 +2,7 @@ import type { Component } from 'vue'
 import ButtonsPage from './ButtonsPage.vue'
 import InputsPage from './InputsPage.vue'
 import ColorsPage from './ColorsPage.vue'
+import SizesPage from './SizesPage.vue'
 
 export interface PageDef {
   label: string
@@ -9,9 +10,10 @@ export interface PageDef {
 }
 
 export const pages: Record<string, PageDef> = {
+  sizes: { label: 'Sizes', component: SizesPage },
+  colors: { label: 'Colors', component: ColorsPage },
   buttons: { label: 'Button', component: ButtonsPage },
   inputs: { label: 'Inputs', component: InputsPage },
-  colors: { label: 'Colors', component: ColorsPage },
 }
 
 export type PageKey = keyof typeof pages

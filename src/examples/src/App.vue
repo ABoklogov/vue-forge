@@ -41,35 +41,4 @@ const currentComponent = computed(() => pages[current.value].component)
   color: #213547;
 }
 header h1 { margin-bottom: 0.5rem; }
-header p { color: #666; margin-bottom: 2rem; }
-.demo-block {
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  background: #fafafa;
-}
-.demo-block h2 {
-  margin-top: 0;
-  font-size: 0.9rem;
-  color: #444;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-.row {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.hint {
-  margin-top: 0.75rem;
-  font-size: 0.875rem;
-  color: #6b7280;
-}
-code {
-  background: #eef2ff;
-  padding: 0.1rem 0.35rem;
-  border-radius: 4px;
-}
 </style>

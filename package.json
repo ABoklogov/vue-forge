@@ -19,7 +19,8 @@
   "scripts": {
     "dev": "vite --config src/examples/vite.config.ts",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:playground": "vite build --config src/examples/vite.config.ts"
   },
   "sideEffects": [
     "**/*.css"

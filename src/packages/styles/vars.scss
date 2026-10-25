@@ -1,0 +1,19 @@
+// Радиусы (базовые)
+$radius-xxs: 4px;
+$radius-xs: 5px;
+$radius-s: 6px;
+$radius-m: 8px;
+$radius-l: 10px;
+$radius-xl: 12px;
+$radius-xxl: 16px;
+
+// Базовые токены размеров (SCSS)
+$sizes: (
+  xxs: (height: 24px, font-size: 12px, radius: $radius-m, padding-x: 6px),
+  xs:  (height: 28px, font-size: 12px, radius: $radius-m, padding-x: 8px),
+  s:   (height: 32px, font-size: 14px, radius: $radius-m, padding-x: 10px),
+  m:   (height: 38px, font-size: 14px, radius: $radius-m, padding-x: 12px),
+  l:   (height: 44px, font-size: 14px, radius: $radius-xl, padding-x: 14px),
+  xl:  (height: 50px, font-size: 16px, radius: $radius-xl, padding-x: 16px),
+  xxl: (height: 60px, font-size: 18px, radius: $radius-xl, padding-x: 18px),
+);
