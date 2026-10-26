@@ -1,0 +1,7 @@
+@mixin vf-size($size) {
+  height: var(--vf-size-#{$size}-height);
+  font-size: var(--vf-size-#{$size}-font-size);
+  border-radius: var(--vf-size-#{$size}-radius);
+  padding-left: var(--vf-size-#{$size}-padding-x);
+  padding-right: var(--vf-size-#{$size}-padding-x);
+}

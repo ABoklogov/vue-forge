@@ -37,8 +37,8 @@ const { sizeClass, sizeStyle } = useSize(() => props.size, 'm')
 
 <style lang="scss">
 // ⚠️ НЕ scoped — иначе CSS-переменные не пробросятся через :root
+@use '../../styles/mixins.scss' as *;
 @use '../../styles/vars.scss' as *;
-@use '../../styles/index.scss' as *;
 
 .vf-button {
   display: inline-flex;

@@ -1,23 +1,16 @@
 @use 'sass:map';
 @use './vars.scss' as *;
+@forward './vars.scss'; // чтобы $sizes был доступен в компонентах
+@forward './mixins.scss';
 
 :root {
   @each $name, $props in $sizes {
     --vf-size-#{$name}-height: #{map.get($props, height)};
-    --vf-size-#{$name}-font-size: #{map.get($props, height)};
-    --vf-size-#{$name}-radius: #{map.get($props, height)};
-    --vf-size-#{$name}-padding-x: #{map.get($props, height)};
+    --vf-size-#{$name}-font-size: #{map.get($props, font-size)};
+    --vf-size-#{$name}-radius: #{map.get($props, radius)};
+    --vf-size-#{$name}-padding-x: #{map.get($props, padding-x)};
   }
 
   // Дефолтный размер
   --vf-size-default: m;
-}
-
-// Миксин для применения размера к компоненту
-@mixin vf-size($size) {
-  height: var(--vf-size-#{$size}-height);
-  font-size: var(--vf-size-#{$size}-font-size);
-  border-radius: var(--vf-size-#{$size}-radius);
-  padding-left: var(--vf-size-#{$size}-padding-x);
-  padding-right: var(--vf-size-#{$size}-padding-x);
 }
