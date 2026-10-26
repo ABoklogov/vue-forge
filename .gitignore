@@ -6,6 +6,7 @@ node_modules/
 # Сборка
 dist/
 dist-ssr/
+docs-dist/
 *.local
 
 # Логи
