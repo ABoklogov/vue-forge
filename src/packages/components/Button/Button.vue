@@ -12,11 +12,10 @@
 </template>
 
 <script setup lang="ts">
-import { useSize } from '@/composables';
-import { VfSize } from '@/constants';
+import { useSize } from '@/composables'
+import type { VfSize } from '@/constants'
 
 defineOptions({ name: 'VfButton' })
-
 
 const props = withDefaults(
   defineProps<{
@@ -36,26 +35,42 @@ const { sizeClass, sizeStyle } = useSize(() => props.size, 'm')
 </script>
 
 <style lang="scss">
-// ⚠️ НЕ scoped — иначе CSS-переменные не пробросятся через :root
-@use '../../styles/mixins.scss' as *;
 @use '../../styles/vars.scss' as *;
+@use '../../styles/mixins.scss' as *;
 
 .vf-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  border: 1px solid #d1d5db;
-  background: #fff;
+  border: 1px solid var(--vf-color-primary, #2149ff);
+  background: var(--vf-color-primary, #2149ff);
+  color: var(--vf-color-primary-text, #fff);
   cursor: pointer;
   font-family: inherit;
   transition: background 0.15s, border-color 0.15s;
 
-  &:hover:not(:disabled) { background: #f3f4f6; }
-  &:disabled { opacity: 0.5; cursor: not-allowed; }
+  &:hover:not(:disabled) {
+    background: var(--vf-color-primary-hover, #193fe9);
+    border-color: var(--vf-color-primary-hover, #193fe9);
+  }
+
+  &:active:not(:disabled) {
+    background: var(--vf-color-primary-pressed, #1739d0);
+    border-color: var(--vf-color-primary-pressed, #1739d0);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--vf-color-focus, #6883ff);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
-// Генерируем классы для всех «встроенных» размеров
 @each $name, $_ in $sizes {
   .vf-size-#{$name} {
     @include vf-size($name);

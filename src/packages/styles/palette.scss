@@ -1,0 +1,65 @@
+// Base palette
+$color-base-00: #fff;            // Чистый белый
+$color-base-01: #25242a;         // Основной фон страницы
+$color-base-02: #100f14;         // Фон бокового меню и header
+$color-base-03: #2f3038;         // Границы таблиц, островки и блоки
+$color-base-04: #24243a;         // Фон активного состояния пунктов меню
+$color-base-05: #161621;
+$color-scroll-primary: #515055;
+
+// Buttons
+$color-primary: #2149ff;
+$color-primary-hover: #193fe9;
+$color-primary-pressed: #1739d0;
+$color-secondary: #fff;
+$color-secondary-hover: rgba(255, 255, 255, 0.1);
+$color-secondary-pressed: rgba(255, 255, 255, 0.2);
+$color-focused: #6883ff;
+
+// Text
+$color-text-01: #fff;
+$color-text-02: #999999;
+$color-text-03: #4f515e;
+$color-link: #395dff;
+$color-text-mark: #253689;
+
+// Support palette
+$color-sea: #00c8ff;
+$color-ocean: #0038ff;
+$color-lagoon: #264e60;
+$color-red: #ea3e44;
+$color-orange: #ff6e06;
+$color-grass-light: #75ff00;
+$color-grass-secondary: #14ca74;
+$color-grass: #34b41f;
+$color-snow: #d9e1fa;
+$color-infinity: #eff9fe;
+$color-stone-01: #c3d1d9;
+$color-stone-02: #a2b1bb;
+$color-tiffany-light: #3cffdb;
+
+// Status
+$color-positive: #25a92a;
+$color-negative: #df191c;
+$error-text-fill: #dd4c1e;
+$color-positive-bg: #64ce6833;
+$color-positive-text: #64ce68;
+$color-neutral-text: #b8bcbf;
+$color-neutral-bg: #b8bcbf33;
+$color-cyan-bg: #3cffdb33;
+$color-blue-bg: #242b55;
+$color-violet-bg: #c368ff33;
+$color-violet-text: #c368ff;
+
+$color-negative-bg: #f9706633;
+$color-negative-text: #f97066;
+$color-warning-bg: #fa773e33;
+$color-warning-text: #fa773e;
+$color-warning: #eb9533;
+$color-warning-fill: #fcbb14;
+$color-alert-bg: #deb15b33;
+$color-alert-text: #deb15b;
+$color-info: #3682db;
+$color-info-light: #a8cef1;
+$color-info-bg: #1d46ff33;
+$color-pale-red: #813d35;

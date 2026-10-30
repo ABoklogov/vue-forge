@@ -1,0 +1,59 @@
+@use './palette.scss' as *;
+
+$theme: (
+  // Backgrounds
+  bg-page: $color-base-01,
+  bg-elevated: $color-base-02,
+  bg-surface: $color-base-03,
+  bg-muted: $color-base-05,
+  bg-active: $color-base-04,
+
+  // Text
+  text-primary: $color-text-01,
+  text-secondary: $color-text-02,
+  text-muted: $color-text-03,
+  text-link: $color-link,
+
+  // Borders
+  border: $color-base-03,
+  border-strong: $color-base-05,
+
+  // Primary actions
+  primary: $color-primary,
+  primary-hover: $color-primary-hover,
+  primary-pressed: $color-primary-pressed,
+  primary-text: $color-base-00, // текст на primary (для контраста)
+
+  // Secondary (обводка, ghost)
+  secondary: $color-secondary,
+  secondary-hover: $color-secondary-hover,
+  secondary-pressed: $color-secondary-pressed,
+
+  // Focus
+  focus: $color-focused,
+
+  // Status: positive
+  positive: $color-positive,
+  positive-text: $color-positive-text,
+  positive-bg: $color-positive-bg,
+
+  // Status: negative
+  negative: $color-negative,
+  negative-text: $color-negative-text,
+  negative-bg: $color-negative-bg,
+
+  // Status: warning
+  warning: $color-warning,
+  warning-text: $color-warning-text,
+  warning-bg: $color-warning-bg,
+  warning-fill: $color-warning-fill,
+
+  // Status: info
+  info: $color-info,
+  info-light: $color-info-light,
+  info-bg: $color-info-bg,
+
+  // Neutral
+  neutral-text: $color-neutral-text,
+  neutral-bg: $color-neutral-bg,
+);

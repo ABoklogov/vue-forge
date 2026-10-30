@@ -3,6 +3,8 @@ import { Button, TextInput } from './components'
 import { DEFAULT_SIZE_FALLBACK, DEFAULT_SIZE_KEY } from './constants'
 import { VueForgeOptions } from './types'
 
+import './styles/index.scss'
+
 export { Button, TextInput }
 export * from './constants'  
 export * from './types'
@@ -10,7 +12,6 @@ export * from './composables'
 // export * from './utils'
 
 export const version = '0.1.0'
-
 
 const components = [Button, TextInput]
 

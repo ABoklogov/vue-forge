@@ -1,9 +1,13 @@
 @use 'sass:map';
 @use './vars.scss' as *;
-@forward './vars.scss'; // чтобы $sizes был доступен в компонентах
+@use './palette.scss' as *;
+@use './theme.scss' as *;
+
+@forward './vars.scss';
 @forward './mixins.scss';
 
 :root {
+  // === Размеры ===
   @each $name, $props in $sizes {
     --vf-size-#{$name}-height: #{map.get($props, height)};
     --vf-size-#{$name}-font-size: #{map.get($props, font-size)};
@@ -13,4 +17,9 @@
 
   // Дефолтный размер
   --vf-size-default: m;
+
+  // === Семантические цвета ===
+  @each $token, $value in $theme {
+    --vf-color-#{$token}: #{$value};
+  }
 }
